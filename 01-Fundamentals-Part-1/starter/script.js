@@ -130,13 +130,25 @@
 // console.log(JohnsBMI2);
 
 // String and Template Literals
-const firstName = "Max";
-const job = "Technician";
-const birthYear = 1998;
-const year = 2022;
+// const firstName = "Max";
+// const job = "Technician";
+// const birthYear = 1998;
+// const year = 2022;
 
-const max = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + "!";
-console.log(max);
+// const max = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + "!";
+// console.log(max);
 
-const maxNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
-console.log(maxNew);
+// const maxNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
+// console.log(maxNew);
+
+
+// Taking Decisions
+
+const age = 19;
+
+if (age >= 18) {
+    console.log("Allowed to drive.")
+} else {
+    const yearsLeft = 19 - age;
+    console.log(`Too young. Wait another ${yearsLeft} year :C`);
+}
