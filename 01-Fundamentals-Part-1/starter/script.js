@@ -97,10 +97,34 @@ const agePedro = 2022 - 1994;
 // For more information visit documentation
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
-let x, y;
-x = y = 25 - 10 - 5;
-console.log(x, y);
+// let x, y;
+// x = y = 25 - 10 - 5;
+// console.log(x, y);
 
-// const averageAge = ageMax + ageJonas / 2;
-const averageAge = (ageMax + ageJonas) / 2;
-console.log(averageAge)
+// // const averageAge = ageMax + ageJonas / 2;
+// const averageAge = (ageMax + ageJonas) / 2;
+// console.log(averageAge)
+
+// Coding Challenge #1
+
+// Test Data 1
+const MarksWeight1 = 78;
+const MarksHeight1 = 1.69;
+const JohnsWeight1 = 92;
+const JohnsHeight1 = 1.95;
+
+const MarksBMI1 = MarksWeight1 / (MarksHeight1 ** 2);
+console.log(MarksBMI1);
+const JohnsBMI1 = JohnsWeight1 / (JohnsHeight1 ** 2);
+console.log(JohnsBMI1);
+
+// Test Data 2
+const MarksWeight2 = 95;
+const MarksHeight2 = 1.88;
+const JohnsWeight2 = 85;
+const JohnsHeight2 = 1.76;
+
+const MarksBMI2 = MarksWeight2 / (MarksHeight2 ** 2);
+console.log(MarksBMI2);
+const JohnsBMI2 = JohnsWeight2 / (JohnsHeight2 ** 2);
+console.log(JohnsBMI2);
