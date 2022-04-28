@@ -69,3 +69,26 @@ const birthYear = 1990;
 // By doing this, compiler will create a property in the global object
 // lastName = "Ponce";
 // console.log(lastName);
+
+// Basic Operators
+const now = 2022;
+const ageMax = now - 1998;
+const ageJonas = now - 1991;
+const agePedro = 2022 - 1994;
+console.log(ageMax);
+console.log(agePedro * 2, ageJonas / 10, 2 ** 3);
+
+const firstName = "Maximiliano";
+const lastName = "Ponce";
+console.log(firstName + " " + lastName);
+
+let x = 10 * 5;
+console.log(x);
+x += 30;
+console.log(x);
+
+console.log(ageMax > ageJonas);
+console.log(ageMax >= 18);
+const isFullAge = agePedro >= 18;
+
+console.log(now - 1992 > now - 2018);
