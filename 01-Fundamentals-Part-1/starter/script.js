@@ -108,15 +108,15 @@
 // Coding Challenge #1
 
 // Test Data 1
-// const MarksWeight1 = 78;
-// const MarksHeight1 = 1.69;
-// const JohnsWeight1 = 92;
-// const JohnsHeight1 = 1.95;
+const MarksWeight1 = 78;
+const MarksHeight1 = 1.69;
+const JohnsWeight1 = 92;
+const JohnsHeight1 = 1.95;
 
-// const MarksBMI1 = MarksWeight1 / (MarksHeight1 ** 2);
-// console.log(MarksBMI1);
-// const JohnsBMI1 = JohnsWeight1 / (JohnsHeight1 ** 2);
-// console.log(JohnsBMI1);
+const MarksBMI1 = MarksWeight1 / (MarksHeight1 ** 2);
+console.log(MarksBMI1);
+const JohnsBMI1 = JohnsWeight1 / (JohnsHeight1 ** 2);
+console.log(JohnsBMI1);
 
 // // Test Data 2
 // const MarksWeight2 = 95;
@@ -144,11 +144,22 @@
 
 // Taking Decisions
 
-const age = 19;
+// const age = 19;
 
-if (age >= 18) {
-    console.log("Allowed to drive.")
+// if (age >= 18) {
+//     console.log("Allowed to drive.")
+// } else {
+//     const yearsLeft = 19 - age;
+//     console.log(`Too young. Wait another ${yearsLeft} year :C`);
+// }
+
+
+// Coding Challenge #2
+
+const MarkIsHigher = MarksBMI1 > JohnsBMI1;
+
+if (MarkIsHigher) {
+    console.log(`Mark's BMI (${MarksBMI1}) is higher than John's (${JohnsBMI1})`);
 } else {
-    const yearsLeft = 19 - age;
-    console.log(`Too young. Wait another ${yearsLeft} year :C`);
+    console.log(`Johns's BMI (${JohnsBMI1}) is higher than John's (${MarksBMI1})`);
 }
