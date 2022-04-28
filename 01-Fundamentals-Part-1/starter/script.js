@@ -7,8 +7,8 @@ console.log("Jonas")
 console.log(23);
 
 // Values and Variables
-let firstName = "Maxiflow";
-console.log(firstName)
+// let firstName = "Maxiflow";
+// console.log(firstName)
 
 // Variable names cannot start with numbers
 // let 3xd = 10;
@@ -50,3 +50,22 @@ console.log(typeof null)
 console.log(typeof javascriptIsFun)
 javascriptIsFun = "Hello"
 console.log(typeof javascriptIsFun)
+
+// let, const and var
+let age = 30;
+age = 31;
+
+const birthYear = 1990;
+// Not allowed
+// birthYear = 12;
+
+// Not allowed, const need to be initialized.
+// const job;
+
+// let is block scoped
+// var is function scoped
+// more information on lesson 7
+
+// By doing this, compiler will create a property in the global object
+// lastName = "Ponce";
+// console.log(lastName);
