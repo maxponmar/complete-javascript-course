@@ -1,10 +1,10 @@
 // Hello world
-let js = 'amazing';
-// if (js === 'amazing') alert("JavaScript is FUN!");
-console.log(40 + 8 + 23 - 10);
+// let js = 'amazing';
+// // if (js === 'amazing') alert("JavaScript is FUN!");
+// console.log(40 + 8 + 23 - 10);
 
-console.log("Jonas")
-console.log(23);
+// console.log("Jonas")
+// console.log(23);
 
 // Values and Variables
 // let firstName = "Maxiflow";
@@ -12,14 +12,14 @@ console.log(23);
 
 // Variable names cannot start with numbers
 // let 3xd = 10;
-let xd = 10;
+// let xd = 10;
 
 // Variable names cannot use javascript keywords
 // let new = 10;
 // let function = "Hello"
 
 // By convention, constants are named with capital letters
-let PI = 3.1415;
+// let PI = 3.1415;
 
 // Data Types
 
@@ -34,28 +34,28 @@ let PI = 3.1415;
 
 // Javascript has dynamic typing, we do not have to manually define the data type
 
-let javascriptIsFun = true;
-console.log(javascriptIsFun);
-console.log(typeof true)
-console.log(typeof "XD")
-console.log(typeof 10)
-console.log(typeof 10.123123)
-let other;
-console.log(typeof other)
-// Javascript thinks that null is of type object (WARNING: weird behavior)
-console.log(typeof null)
+// let javascriptIsFun = true;
+// console.log(javascriptIsFun);
+// console.log(typeof true)
+// console.log(typeof "XD")
+// console.log(typeof 10)
+// console.log(typeof 10.123123)
+// let other;
+// console.log(typeof other)
+// // Javascript thinks that null is of type object (WARNING: weird behavior)
+// console.log(typeof null)
 
 
-// Dynamic typing in action
-console.log(typeof javascriptIsFun)
-javascriptIsFun = "Hello"
-console.log(typeof javascriptIsFun)
+// // Dynamic typing in action
+// console.log(typeof javascriptIsFun)
+// javascriptIsFun = "Hello"
+// console.log(typeof javascriptIsFun)
 
 // let, const and var
-let age = 30;
-age = 31;
+// let age = 30;
+// age = 31;
 
-const birthYear = 1990;
+// const birthYear = 1990;
 // Not allowed
 // birthYear = 12;
 
@@ -71,10 +71,10 @@ const birthYear = 1990;
 // console.log(lastName);
 
 // Basic Operators
-const now = 2022;
-const ageMax = now - 1998;
-const ageJonas = now - 1991;
-const agePedro = 2022 - 1994;
+// const now = 2022;
+// const ageMax = now - 1998;
+// const ageJonas = now - 1991;
+// const agePedro = 2022 - 1994;
 // console.log(ageMax);
 // console.log(agePedro * 2, ageJonas / 10, 2 ** 3);
 
@@ -108,23 +108,35 @@ const agePedro = 2022 - 1994;
 // Coding Challenge #1
 
 // Test Data 1
-const MarksWeight1 = 78;
-const MarksHeight1 = 1.69;
-const JohnsWeight1 = 92;
-const JohnsHeight1 = 1.95;
+// const MarksWeight1 = 78;
+// const MarksHeight1 = 1.69;
+// const JohnsWeight1 = 92;
+// const JohnsHeight1 = 1.95;
 
-const MarksBMI1 = MarksWeight1 / (MarksHeight1 ** 2);
-console.log(MarksBMI1);
-const JohnsBMI1 = JohnsWeight1 / (JohnsHeight1 ** 2);
-console.log(JohnsBMI1);
+// const MarksBMI1 = MarksWeight1 / (MarksHeight1 ** 2);
+// console.log(MarksBMI1);
+// const JohnsBMI1 = JohnsWeight1 / (JohnsHeight1 ** 2);
+// console.log(JohnsBMI1);
 
-// Test Data 2
-const MarksWeight2 = 95;
-const MarksHeight2 = 1.88;
-const JohnsWeight2 = 85;
-const JohnsHeight2 = 1.76;
+// // Test Data 2
+// const MarksWeight2 = 95;
+// const MarksHeight2 = 1.88;
+// const JohnsWeight2 = 85;
+// const JohnsHeight2 = 1.76;
 
-const MarksBMI2 = MarksWeight2 / (MarksHeight2 ** 2);
-console.log(MarksBMI2);
-const JohnsBMI2 = JohnsWeight2 / (JohnsHeight2 ** 2);
-console.log(JohnsBMI2);
+// const MarksBMI2 = MarksWeight2 / (MarksHeight2 ** 2);
+// console.log(MarksBMI2);
+// const JohnsBMI2 = JohnsWeight2 / (JohnsHeight2 ** 2);
+// console.log(JohnsBMI2);
+
+// String and Template Literals
+const firstName = "Max";
+const job = "Technician";
+const birthYear = 1998;
+const year = 2022;
+
+const max = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + "!";
+console.log(max);
+
+const maxNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
+console.log(maxNew);
