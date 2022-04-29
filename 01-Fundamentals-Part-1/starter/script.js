@@ -213,3 +213,27 @@ if (height) {
 } else {
     console.log("Not exists OR is 0")
 }
+
+// Equality Operators
+
+const age = 18;
+// === DOES NOT use type coercion
+if (age === 18)
+    console.log("You just became an adult");
+
+// == DOES use type coercion
+if ('18' == 18) // loose
+    console.log("You just became an adult (loose)");
+if ('18' === 18) // strict
+    console.log("You just became an adult (strict)");
+// Also applies for != and !==
+
+// const favourite = prompt("What's your favourite nubmer?");
+const favourite = Number(prompt("What's your favourite nubmer?"));
+console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite == 23)
+    console.log('23 is an amazing number')
+if (favourite === 23)
+    console.log('23 is an amazing number')
