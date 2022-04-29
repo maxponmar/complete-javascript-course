@@ -187,3 +187,29 @@ console.log('I am ' + 23 + ' years old')
 console.log('23' - '10' - 3);
 console.log('23' + '10' - 3);
 console.log('21' * '2');
+
+
+// Truthy and Falsy Values
+
+// 5 Falsy values: 0, '', undefined, null, NaN
+console.log(Boolean(0))
+console.log(Boolean(''))
+console.log(Boolean(undefined))
+console.log(Boolean(null))
+console.log(Boolean(NaN))
+console.log(Boolean({}))
+
+const money = 1;
+if (money) {
+    console.log("Spent your money :D")
+} else {
+    console.log("No money")
+}
+
+let height;
+// height = 10;
+if (height) {
+    console.log("Exists")
+} else {
+    console.log("Not exists OR is 0")
+}
