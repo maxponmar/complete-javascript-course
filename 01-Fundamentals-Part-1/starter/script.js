@@ -237,3 +237,6 @@ if (favourite == 23)
     console.log('23 is an amazing number')
 if (favourite === 23)
     console.log('23 is an amazing number')
+
+// Boolean Logic
+// Theory
