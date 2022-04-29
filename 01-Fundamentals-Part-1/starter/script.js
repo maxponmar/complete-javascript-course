@@ -240,3 +240,15 @@ if (favourite === 23)
 
 // Boolean Logic
 // Theory
+
+// Logical Operators
+
+const hasDriversLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+
+
+console.log(!hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || !hasGoodVision);
