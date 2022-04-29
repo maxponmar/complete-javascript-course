@@ -252,3 +252,28 @@ console.log(hasDriversLicense || hasGoodVision);
 
 console.log(!hasDriversLicense && hasGoodVision);
 console.log(hasDriversLicense || !hasGoodVision);
+
+
+// Coding Challenge 3
+
+const DolphinsScore = (96 + 108 + 89) / 3;
+// const DolphinsScore = (97 + 112 + 101) / 3;
+const KoalasScore = (88 + 91 + 110) / 3;
+// const KoalasScore = (109 + 95 + 106) / 3;
+
+console.log(DolphinsScore);
+console.log(KoalasScore);
+
+if (DolphinsScore > KoalasScore)
+    console.log("Dolphins' team win");
+else if (KoalasScore < DolphinsScore)
+    console.log("Koalas' team win");
+else if (DolphinsScore === DolphinsScore)
+    console.log("Draw.")
+
+if ((DolphinsScore > KoalasScore) && DolphinsScore > 100)
+    console.log("Dolphins' team win, with more than 100 points");
+else if ((KoalasScore < DolphinsScore) && KoalasScore > 100)
+    console.log("Koalas' team win, with more than 100 points");
+else if ((DolphinsScore === DolphinsScore) && DolphinsScore >= 100)
+    console.log("Draw with 100 points or more.")
