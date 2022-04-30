@@ -229,14 +229,14 @@ if ('18' === 18) // strict
 // Also applies for != and !==
 
 // const favourite = prompt("What's your favourite nubmer?");
-const favourite = Number(prompt("What's your favourite nubmer?"));
-console.log(favourite);
-console.log(typeof favourite);
+// const favourite = Number(prompt("What's your favourite nubmer?"));
+// console.log(favourite);
+// console.log(typeof favourite);
 
-if (favourite == 23)
-    console.log('23 is an amazing number')
-if (favourite === 23)
-    console.log('23 is an amazing number')
+// if (favourite == 23)
+//     console.log('23 is an amazing number')
+// if (favourite === 23)
+//     console.log('23 is an amazing number')
 
 // Boolean Logic
 // Theory
@@ -277,3 +277,28 @@ else if ((KoalasScore < DolphinsScore) && KoalasScore > 100)
     console.log("Koalas' team win, with more than 100 points");
 else if ((DolphinsScore === DolphinsScore) && DolphinsScore >= 100)
     console.log("Draw with 100 points or more.")
+
+// The Switch Statement
+const day = 'wednesday';
+
+switch (day) {
+    case 'monday': // day === 'monday'
+        console.log("Pla course structure");
+        console.log("Go to coding met up");
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write code examples')
+        break;
+    case 'friday':
+        console.log("Record videos");
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the weekend');
+        break;
+    default:
+        console.log("Not a valida day!");
+}
