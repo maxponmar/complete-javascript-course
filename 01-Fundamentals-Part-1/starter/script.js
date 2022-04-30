@@ -108,15 +108,15 @@
 // Coding Challenge #1
 
 // Test Data 1
-const MarksWeight1 = 78;
-const MarksHeight1 = 1.69;
-const JohnsWeight1 = 92;
-const JohnsHeight1 = 1.95;
+// const MarksWeight1 = 78;
+// const MarksHeight1 = 1.69;
+// const JohnsWeight1 = 92;
+// const JohnsHeight1 = 1.95;
 
-const MarksBMI1 = MarksWeight1 / (MarksHeight1 ** 2);
-console.log(MarksBMI1);
-const JohnsBMI1 = JohnsWeight1 / (JohnsHeight1 ** 2);
-console.log(JohnsBMI1);
+// const MarksBMI1 = MarksWeight1 / (MarksHeight1 ** 2);
+// console.log(MarksBMI1);
+// const JohnsBMI1 = JohnsWeight1 / (JohnsHeight1 ** 2);
+// console.log(JohnsBMI1);
 
 // // Test Data 2
 // const MarksWeight2 = 95;
@@ -156,76 +156,76 @@ console.log(JohnsBMI1);
 
 // Coding Challenge #2
 
-const MarkIsHigher = MarksBMI1 > JohnsBMI1;
+// const MarkIsHigher = MarksBMI1 > JohnsBMI1;
 
-if (MarkIsHigher) {
-    console.log(`Mark's BMI (${MarksBMI1}) is higher than John's (${JohnsBMI1})`);
-} else {
-    console.log(`Johns's BMI (${JohnsBMI1}) is higher than John's (${MarksBMI1})`);
-}
+// if (MarkIsHigher) {
+//     console.log(`Mark's BMI (${MarksBMI1}) is higher than John's (${JohnsBMI1})`);
+// } else {
+//     console.log(`Johns's BMI (${JohnsBMI1}) is higher than John's (${MarksBMI1})`);
+// }
 
 // Type Convertion and Coercion
 
 // Type Convertion
-const inputYear = '1990';
-console.log(inputYear + 18);
-console.log(inputYear)
-console.log(Number(inputYear))
+// const inputYear = '1990';
+// console.log(inputYear + 18);
+// console.log(inputYear)
+// console.log(Number(inputYear))
 
-console.log(Number(inputYear) + 18);
-console.log(Number('Max'));
+// console.log(Number(inputYear) + 18);
+// console.log(Number('Max'));
 
 // NaN is an invalid number
-console.log(typeof NaN);
+// console.log(typeof NaN);
 
-console.log(String(23));
+// console.log(String(23));
 
 // Type Coercion
 // Numbers are converted to strings
-console.log('I am ' + 23 + ' years old')
+// console.log('I am ' + 23 + ' years old')
 
-console.log('23' - '10' - 3);
-console.log('23' + '10' - 3);
-console.log('21' * '2');
+// console.log('23' - '10' - 3);
+// console.log('23' + '10' - 3);
+// console.log('21' * '2');
 
 
 // Truthy and Falsy Values
 
 // 5 Falsy values: 0, '', undefined, null, NaN
-console.log(Boolean(0))
-console.log(Boolean(''))
-console.log(Boolean(undefined))
-console.log(Boolean(null))
-console.log(Boolean(NaN))
-console.log(Boolean({}))
+// console.log(Boolean(0))
+// console.log(Boolean(''))
+// console.log(Boolean(undefined))
+// console.log(Boolean(null))
+// console.log(Boolean(NaN))
+// console.log(Boolean({}))
 
-const money = 1;
-if (money) {
-    console.log("Spent your money :D")
-} else {
-    console.log("No money")
-}
+// const money = 1;
+// if (money) {
+//     console.log("Spent your money :D")
+// } else {
+//     console.log("No money")
+// }
 
-let height;
-// height = 10;
-if (height) {
-    console.log("Exists")
-} else {
-    console.log("Not exists OR is 0")
-}
+// let height;
+// // height = 10;
+// if (height) {
+//     console.log("Exists")
+// } else {
+//     console.log("Not exists OR is 0")
+// }
 
 // Equality Operators
 
-const age = 18;
+// const age = 18;
 // === DOES NOT use type coercion
-if (age === 18)
-    console.log("You just became an adult");
+// if (age === 18)
+//     console.log("You just became an adult");
 
 // == DOES use type coercion
-if ('18' == 18) // loose
-    console.log("You just became an adult (loose)");
-if ('18' === 18) // strict
-    console.log("You just became an adult (strict)");
+// if ('18' == 18) // loose
+//     console.log("You just became an adult (loose)");
+// if ('18' === 18) // strict
+//     console.log("You just became an adult (strict)");
 // Also applies for != and !==
 
 // const favourite = prompt("What's your favourite nubmer?");
@@ -243,77 +243,85 @@ if ('18' === 18) // strict
 
 // Logical Operators
 
-const hasDriversLicense = true;
-const hasGoodVision = true;
+// const hasDriversLicense = true;
+// const hasGoodVision = true;
 
-console.log(hasDriversLicense && hasGoodVision);
-console.log(hasDriversLicense || hasGoodVision);
+// console.log(hasDriversLicense && hasGoodVision);
+// console.log(hasDriversLicense || hasGoodVision);
 
 
-console.log(!hasDriversLicense && hasGoodVision);
-console.log(hasDriversLicense || !hasGoodVision);
+// console.log(!hasDriversLicense && hasGoodVision);
+// console.log(hasDriversLicense || !hasGoodVision);
 
 
 // Coding Challenge 3
 
-const DolphinsScore = (96 + 108 + 89) / 3;
+// const DolphinsScore = (96 + 108 + 89) / 3;
 // const DolphinsScore = (97 + 112 + 101) / 3;
-const KoalasScore = (88 + 91 + 110) / 3;
+// const KoalasScore = (88 + 91 + 110) / 3;
 // const KoalasScore = (109 + 95 + 106) / 3;
 
-console.log(DolphinsScore);
-console.log(KoalasScore);
+// console.log(DolphinsScore);
+// console.log(KoalasScore);
 
-if (DolphinsScore > KoalasScore)
-    console.log("Dolphins' team win");
-else if (KoalasScore < DolphinsScore)
-    console.log("Koalas' team win");
-else if (DolphinsScore === DolphinsScore)
-    console.log("Draw.")
+// if (DolphinsScore > KoalasScore)
+//     console.log("Dolphins' team win");
+// else if (KoalasScore < DolphinsScore)
+//     console.log("Koalas' team win");
+// else if (DolphinsScore === DolphinsScore)
+//     console.log("Draw.")
 
-if ((DolphinsScore > KoalasScore) && DolphinsScore > 100)
-    console.log("Dolphins' team win, with more than 100 points");
-else if ((KoalasScore < DolphinsScore) && KoalasScore > 100)
-    console.log("Koalas' team win, with more than 100 points");
-else if ((DolphinsScore === DolphinsScore) && DolphinsScore >= 100)
-    console.log("Draw with 100 points or more.")
+// if ((DolphinsScore > KoalasScore) && DolphinsScore > 100)
+//     console.log("Dolphins' team win, with more than 100 points");
+// else if ((KoalasScore < DolphinsScore) && KoalasScore > 100)
+//     console.log("Koalas' team win, with more than 100 points");
+// else if ((DolphinsScore === DolphinsScore) && DolphinsScore >= 100)
+//     console.log("Draw with 100 points or more.")
 
 // The Switch Statement
-const day = 'wednesday';
+// const day = 'wednesday';
 
-switch (day) {
-    case 'monday': // day === 'monday'
-        console.log("Pla course structure");
-        console.log("Go to coding met up");
-        break;
-    case 'tuesday':
-        console.log('Prepare theory videos');
-    case 'wednesday':
-    case 'thursday':
-        console.log('Write code examples')
-        break;
-    case 'friday':
-        console.log("Record videos");
-        break;
-    case 'saturday':
-    case 'sunday':
-        console.log('Enjoy the weekend');
-        break;
-    default:
-        console.log("Not a valida day!");
-}
+// switch (day) {
+//     case 'monday': // day === 'monday'
+//         console.log("Pla course structure");
+//         console.log("Go to coding met up");
+//         break;
+//     case 'tuesday':
+//         console.log('Prepare theory videos');
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Write code examples')
+//         break;
+//     case 'friday':
+//         console.log("Record videos");
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log('Enjoy the weekend');
+//         break;
+//     default:
+//         console.log("Not a valida day!");
+// }
 
 // Statements and Expressions.
 
 // An Expression is a piece of code that produces a value
 
 //This is an Expression, it produces a value
-3 + 4
+// 3 + 4
 // Also is an expression, produces a value
-true && false
+// true && false
 
 // Statements are blocks of code that are executed and do not produce a value them selves.
 
-if (23 > 10) {
-    const str = console.log("23 is bigger")
-}
+// if (23 > 10) {
+//     const str = console.log("23 is bigger")
+// }
+
+
+// The Conditional (Ternary) Operator
+const age = 23;
+age >= 18 ? console.log("Allowed to drink") : console.log("Not allowed");
+
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink)
