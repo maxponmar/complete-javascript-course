@@ -11,8 +11,16 @@ console.log(population)
 
 // Data Types
 //1
-let isIsland = false;
-let language;
+// let isIsland = false;
+// let language;
 //2
-console.log(isIsland)
-console.log(language)
+// console.log(isIsland)
+// console.log(language)
+
+// let, const and var
+
+// const language = 'spanish';
+// language = 'english';
+
+let language = 'spanish';
+language = 'english';
