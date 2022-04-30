@@ -302,3 +302,18 @@ switch (day) {
     default:
         console.log("Not a valida day!");
 }
+
+// Statements and Expressions.
+
+// An Expression is a piece of code that produces a value
+
+//This is an Expression, it produces a value
+3 + 4
+// Also is an expression, produces a value
+true && false
+
+// Statements are blocks of code that are executed and do not produce a value them selves.
+
+if (23 > 10) {
+    const str = console.log("23 is bigger")
+}
