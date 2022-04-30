@@ -320,8 +320,16 @@
 
 
 // The Conditional (Ternary) Operator
-const age = 23;
-age >= 18 ? console.log("Allowed to drink") : console.log("Not allowed");
+// const age = 23;
+// age >= 18 ? console.log("Allowed to drink") : console.log("Not allowed");
 
-const drink = age >= 18 ? 'wine' : 'water';
-console.log(drink)
+// const drink = age >= 18 ? 'wine' : 'water';
+// console.log(drink)
+
+// Coding Challenge 4
+
+const bill = 40;
+const tip = bill >= 50 && bill <= 300 ? 0.15 : 0.2;
+const total = bill + (bill * tip);
+
+console.log(`Your bill is $${bill}, so your tip is $${bill*tip}. Total value = ${total}`)
