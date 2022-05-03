@@ -75,14 +75,31 @@
 
 // Functions Calling Other Functions
 
-function cutFruitPieces(fruit) {
-  return fruit * 4;
+// function cutFruitPieces(fruit) {
+//   return fruit * 4;
+// }
+
+// function fruitProcessor(apples, oranges) {
+//   const applePieces = cutFruitPieces(apples);
+//   const orangePieces = cutFruitPieces(oranges);
+//   return `Juice with ${applePieces} apple pieces and ${orangePieces} orange pieces.`
+// }
+
+// console.log(fruitProcessor(2, 3));
+
+// Conding Challenge 1
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+const dolphinsAverageScore = calcAverage(44, 23, 71);
+const koalasAverageScore = calcAverage(65, 54, 49);
+
+function checkWinner(avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas)
+    console.log(`Dolphins win (${avgDolphins} - ${avgKoalas})`)
+  else if (avgKoalas >= 2 * avgDolphins)
+    console.log(`Koalas win (${avgKoalas} - ${avgDolphins})`)
 }
 
-function fruitProcessor(apples, oranges) {
-  const applePieces = cutFruitPieces(apples);
-  const orangePieces = cutFruitPieces(oranges);
-  return `Juice with ${applePieces} apple pieces and ${orangePieces} orange pieces.`
-}
 
-console.log(fruitProcessor(2, 3));
+checkWinner(dolphinsAverageScore, koalasAverageScore);
