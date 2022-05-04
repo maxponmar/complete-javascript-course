@@ -210,23 +210,48 @@
 
 // Object Methods
 
-const jonas = {
-  firstName: 'Jonas',
-  lastName: 'Schmedtmann',
-  age: 2037 - 1991,
-  job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven'],
-  // Any function that is atachhed to an object is called a method.
-  calcAge: function (birthYear) {
-    return 2037 - birthYear;
-  },
-  // this is the one who is calling the function
-  // in this case is 'jonas'
-  calcInternalAge: function () {
-    console.log(this);
-    return 2037 - this.age;
+// const jonas = {
+//   firstName: 'Jonas',
+//   lastName: 'Schmedtmann',
+//   age: 2037 - 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven'],
+//   // Any function that is atachhed to an object is called a method.
+//   calcAge: function (birthYear) {
+//     return 2037 - birthYear;
+//   },
+//   // this is the one who is calling the function
+//   // in this case is 'jonas'
+//   calcInternalAge: function () {
+//     console.log(this);
+//     return 2037 - this.age;
+//   }
+// }
+
+// console.log(jonas.calcAge(1230));
+// console.log(jonas.calcInternalAge());
+
+// Coding Challenge 3
+
+const mark = {
+  fullName: 'Mark Miller',
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    return this.mass / (this.height ** 2);
   }
 }
 
-console.log(jonas.calcAge(1230));
-console.log(jonas.calcInternalAge());
+const john = {
+  fullName: 'John Smith',
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    return this.mass / (this.height ** 2);
+  }
+}
+
+if (mark.calcBMI() > john.calcBMI())
+  console.log(`${mark.fullName}'s BMI (${mark.calcBMI()}) is higher than John's (${john.calcBMI()}), weights ${mark.mass} kg and is ${mark.height} m tall.`)
+else if (john.calcBMI() > mark.calcBMI())
+  console.log(`${john.fullName}'s BMI (${john.calcBMI()}) is higher than Mark's (${mark.calcBMI()}), weights ${john.mass} kg and is ${john.height} m tall.`)
