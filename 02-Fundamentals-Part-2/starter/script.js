@@ -190,3 +190,19 @@ const jonas = {
   job: 'teacher',
   friends: ['Michael', 'Peter', 'Steven']
 }
+
+// Dot vs. Bracket Notation
+
+console.log(jonas);
+console.log(jonas.lastName)
+console.log(jonas['lastName']);
+
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+jonas.location = 'Portugal';
+jonas['twitter'] = '@jonasschmedtmann';
+console.log(jonas);
+
+console.log(jonas.friends.length);
