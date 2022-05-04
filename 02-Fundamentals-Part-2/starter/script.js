@@ -175,34 +175,58 @@
 // console.log(total);
 
 // Introduction to Objects
-const jonasArray = [
-  'Jonas',
-  'Schmedtmann',
-  2037 - 1991,
-  'teacher',
-  ['Michael', 'Peter', 'Steven']
-];
+// const jonasArray = [
+//   'Jonas',
+//   'Schmedtmann',
+//   2037 - 1991,
+//   'teacher',
+//   ['Michael', 'Peter', 'Steven']
+// ];
+
+// const jonas = {
+//   firstName: 'Jonas',
+//   lastName: 'Schmedtmann',
+//   age: 2037 - 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven']
+// }
+
+// Dot vs. Bracket Notation
+
+// console.log(jonas);
+// console.log(jonas.lastName)
+// console.log(jonas['lastName']);
+
+// const nameKey = 'Name';
+// console.log(jonas['first' + nameKey]);
+// console.log(jonas['last' + nameKey]);
+
+// jonas.location = 'Portugal';
+// jonas['twitter'] = '@jonasschmedtmann';
+// console.log(jonas);
+
+// console.log(jonas.friends.length);
+
+
+// Object Methods
 
 const jonas = {
   firstName: 'Jonas',
   lastName: 'Schmedtmann',
   age: 2037 - 1991,
   job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven']
+  friends: ['Michael', 'Peter', 'Steven'],
+  // Any function that is atachhed to an object is called a method.
+  calcAge: function (birthYear) {
+    return 2037 - birthYear;
+  },
+  // this is the one who is calling the function
+  // in this case is 'jonas'
+  calcInternalAge: function () {
+    console.log(this);
+    return 2037 - this.age;
+  }
 }
 
-// Dot vs. Bracket Notation
-
-console.log(jonas);
-console.log(jonas.lastName)
-console.log(jonas['lastName']);
-
-const nameKey = 'Name';
-console.log(jonas['first' + nameKey]);
-console.log(jonas['last' + nameKey]);
-
-jonas.location = 'Portugal';
-jonas['twitter'] = '@jonasschmedtmann';
-console.log(jonas);
-
-console.log(jonas.friends.length);
+console.log(jonas.calcAge(1230));
+console.log(jonas.calcInternalAge());
