@@ -89,17 +89,45 @@
 
 // Conding Challenge 1
 
-const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+// const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
-const dolphinsAverageScore = calcAverage(44, 23, 71);
-const koalasAverageScore = calcAverage(65, 54, 49);
+// const dolphinsAverageScore = calcAverage(44, 23, 71);
+// const koalasAverageScore = calcAverage(65, 54, 49);
 
-function checkWinner(avgDolphins, avgKoalas) {
-  if (avgDolphins >= 2 * avgKoalas)
-    console.log(`Dolphins win (${avgDolphins} - ${avgKoalas})`)
-  else if (avgKoalas >= 2 * avgDolphins)
-    console.log(`Koalas win (${avgKoalas} - ${avgDolphins})`)
-}
+// function checkWinner(avgDolphins, avgKoalas) {
+//   if (avgDolphins >= 2 * avgKoalas)
+//     console.log(`Dolphins win (${avgDolphins} - ${avgKoalas})`)
+//   else if (avgKoalas >= 2 * avgDolphins)
+//     console.log(`Koalas win (${avgKoalas} - ${avgDolphins})`)
+// }
 
 
-checkWinner(dolphinsAverageScore, koalasAverageScore);
+// checkWinner(dolphinsAverageScore, koalasAverageScore);
+
+// Introduction to Arrays
+
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+console.log(years);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay'
+console.log(friends);
+// friends = ['Bob', 'Alice'];
+
+const jonas = ['Jonas', 'Schmedtmann', 2037 - 1991, 'teacher', friends];
+console.log(jonas)
+console.log(jonas.length);
+
+console.log(years + 10);
