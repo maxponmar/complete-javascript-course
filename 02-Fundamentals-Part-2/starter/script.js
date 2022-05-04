@@ -257,10 +257,37 @@
 //   console.log(`${john.fullName}'s BMI (${john.calcBMI()}) is higher than Mark's (${mark.calcBMI()}), weights ${john.mass} kg and is ${john.height} m tall.`)
 
 // Iteration: The for loop
-console.log('Reperition 1')
-console.log('Reperition 2')
-console.log('Reperition 3')
+// console.log('Reperition 1')
+// console.log('Reperition 2')
+// console.log('Reperition 3')
 
-for (let rep = 1; rep <= 10; rep++) {
-  console.log('Reperition ' + rep)
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log('Reperition ' + rep)
+// }
+
+// Looping arrays, braking and continuing
+
+const myArray = ['1', 'Hello', 20, [1, 2, 3], true]
+const types = [];
+
+for (let i = 0; i < myArray.length; i++) {
+  // Reading  
+  console.log(myArray[i], typeof myArray[i])
+  // Filling
+  // types[i] = typeof myArray[i];
+  types.push(typeof myArray[i]);
+}
+
+console.log(types)
+
+// continue and break
+for (let i = 0; i < myArray.length; i++) {
+  // Continue will immediately exit the current iteration
+  if (typeof myArray[i] !== 'string') continue;
+  console.log(myArray[i], typeof myArray[i])
+}
+for (let i = 0; i < myArray.length; i++) {
+  // Break will finish the loop no matter the condition.
+  if (typeof myArray[i] === 'number') break;
+  console.log(myArray[i], typeof myArray[i])
 }
