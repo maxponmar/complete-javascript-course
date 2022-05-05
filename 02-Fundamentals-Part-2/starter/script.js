@@ -291,3 +291,15 @@ for (let i = 0; i < myArray.length; i++) {
   if (typeof myArray[i] === 'number') break;
   console.log(myArray[i], typeof myArray[i])
 }
+
+// Looping backwards and loops in loops.
+for (let i = myArray.length - 1; i >= 0; i--) {
+  console.log(myArray[i])
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log("--- Starting exercise " + exercise);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log('Lifting weight repetition ' + rep)
+  }
+}
