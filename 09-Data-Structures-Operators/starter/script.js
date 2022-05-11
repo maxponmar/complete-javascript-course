@@ -42,46 +42,74 @@ const restaurant = {
   },
 };
 
+// Rest Pattern and Parameters
+
+// 1) Destructuring
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+// obtects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  numbers.forEach(num => (sum += num));
+  console.log(sum);
+  return sum;
+};
+add(2, 3);
+add(2, 4, 3, 2);
+add(1, 4, 2, 98);
+
+const x = [23, 5, 7];
+add(...x);
+
 // Spread operator
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
-const newArr = [1, 2, ...arr];
-console.log(newArr);
-console.log(...newArr);
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+// console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
 
-// Copy array
-const mainMenuCopy = [...restaurant.mainMenu];
-// Join 2 arrays
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// // Copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// // Join 2 arrays
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
-const str = 'Jonas';
-const letters = [...str, ' ', 'S.'];
-console.log(letters);
-console.log(...str);
+// const str = 'Jonas';
+// const letters = [...str, ' ', 'S.'];
+// console.log(letters);
+// console.log(...str);
 
-// const ingridients = [prompt("Let's make pasta! Ingridient 1"), prompt("Let's make pasta! Ingridient 2"), prompt("Let's make pasta! Ingridient 3")]
-// restaurant.orderPasta(ingridients[0], ingridients[1], ingridients[2]);
-// restaurant.orderPasta(...ingridients);
+// // const ingridients = [prompt("Let's make pasta! Ingridient 1"), prompt("Let's make pasta! Ingridient 2"), prompt("Let's make pasta! Ingridient 3")]
+// // restaurant.orderPasta(ingridients[0], ingridients[1], ingridients[2]);
+// // restaurant.orderPasta(...ingridients);
 
-// Objects
-const newRestaurant = {
-  ...restaurant,
-  founder: 'Guiseppe',
-  foundedIn: 1998,
-};
-console.log(newRestaurant);
+// // Objects
+// const newRestaurant = {
+//   ...restaurant,
+//   founder: 'Guiseppe',
+//   foundedIn: 1998,
+// };
+// console.log(newRestaurant);
 
-const restaurantCopy = {
-  ...restaurant,
-};
-restaurantCopy.name = 'Ristorante Roma';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// const restaurantCopy = {
+//   ...restaurant,
+// };
+// restaurantCopy.name = 'Ristorante Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
 // Destructuring Objects
 // const {
