@@ -42,12 +42,39 @@ const restaurant = {
   },
 };
 
+// Logical Assigment Operators
+
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owener: 'Giovanni Rossi',
+};
+
+// rest2.numberGuests = rest1.numGuests || 10;
+// Assign property if is falsy
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// Nulish assignment
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+rest1.owener &&= '<Anonymous>';
+rest2.owener &&= '<Anonymous>';
+
+console.log(rest1);
+console.log(rest2);
+
 // The Nulish Coalescing operator
 // Nulish: null and undefined (NOT 0 or '')
-console.log(20 ?? 100);
-console.log('' ?? 10);
-console.log(null ?? 'Helllo');
-console.log(undefined ?? 0);
+// console.log(20 ?? 100);
+// console.log('' ?? 10);
+// console.log(null ?? 'Helllo');
+// console.log(undefined ?? 0);
 
 // Short circuiting
 
