@@ -42,20 +42,27 @@ const restaurant = {
   },
 };
 
+// The Nulish Coalescing operator
+// Nulish: null and undefined (NOT 0 or '')
+console.log(20 ?? 100);
+console.log('' ?? 10);
+console.log(null ?? 'Helllo');
+console.log(undefined ?? 0);
+
 // Short circuiting
 
 // Use any data type, return any data type
 // short-circuiting (if the first value is truthy it will return that value)
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
-// Rest Pattern and Parameters
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// // Rest Pattern and Parameters
 
-console.log(0 && 'Jonas');
-console.log(7 && 'Jonas');
-console.log('Hello' && 23 && null);
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Jonas');
+// console.log('Hello' && 23 && null);
 
 // 1) Destructuring
 // SPREAD, because on RIGHT side of =
