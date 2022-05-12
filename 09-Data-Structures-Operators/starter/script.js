@@ -42,33 +42,46 @@ const restaurant = {
   },
 };
 
+// Short circuiting
+
+// Use any data type, return any data type
+// short-circuiting (if the first value is truthy it will return that value)
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 // Rest Pattern and Parameters
+
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+console.log('Hello' && 23 && null);
 
 // 1) Destructuring
 // SPREAD, because on RIGHT side of =
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
-// REST, because on LEFT side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// // REST, because on LEFT side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-// obtects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// // obtects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-// 2) Functions
-const add = function (...numbers) {
-  let sum = 0;
-  numbers.forEach(num => (sum += num));
-  console.log(sum);
-  return sum;
-};
-add(2, 3);
-add(2, 4, 3, 2);
-add(1, 4, 2, 98);
+// // 2) Functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   numbers.forEach(num => (sum += num));
+//   console.log(sum);
+//   return sum;
+// };
+// add(2, 3);
+// add(2, 4, 3, 2);
+// add(1, 4, 2, 98);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
 
 // Spread operator
 // const arr = [7, 8, 9];
