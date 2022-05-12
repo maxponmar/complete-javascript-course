@@ -42,74 +42,83 @@ const restaurant = {
   },
 };
 
+// Lopping Arrays for-of
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+
+for (const [index, element] of menu.entries()) {
+  console.log(index + 1, element);
+}
+console.log(menu.entries());
+console.log(...menu.entries());
+
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// let [players1, players2] = game.players;
+// let [gk, ...fieldPlayers] = players1;
+// let allPlayers = [...players1, ...players2];
+// let playersFinal = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// const printGoal = function (...players) {
+//   console.log(players.length);
+// };
+// printGoal('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoal(...game.scored);
+// team1 < team2 && console.log('Team 1 is more likely to win');
+
 // Logical Assigment Operators
 
-const rest1 = {
-  name: 'Capri',
-  numGuests: 0,
-};
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 0,
+// };
 
-const rest2 = {
-  name: 'La Piazza',
-  owener: 'Giovanni Rossi',
-};
+// const rest2 = {
+//   name: 'La Piazza',
+//   owener: 'Giovanni Rossi',
+// };
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
-
-let [players1, players2] = game.players;
-let [gk, ...fieldPlayers] = players1;
-let allPlayers = [...players1, ...players2];
-let playersFinal = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-const printGoal = function (...players) {
-  console.log(players.length);
-};
-printGoal('Davies', 'Muller', 'Lewandowski', 'Kimmich');
-printGoal(...game.scored);
-team1 < team2 && console.log('Team 1 is more likely to win');
-
-// Logical Assignment Operators
 // rest2.numberGuests = rest1.numGuests || 10;
 // Assign property if is falsy
 // rest1.numGuests ||= 10;
