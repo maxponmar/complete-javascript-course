@@ -51,19 +51,75 @@ const restaurant = {
   },
 };
 
+// Coding Challenge 2
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+for (const [i, player] of game.scored.entries())
+  console.log(`Goal ${i + 1}: ${player}`);
+
+let average = 0;
+for (const odd of Object.values(game.odds)) average += odd;
+average /= Object.values(game.odds).length;
+console.log(average);
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamString = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamString} ${odd}`);
+}
+
 // Looping objects
-for (const day of Object.keys(openingHours)) console.log(day);
-const properties = Object.keys(openingHours);
-console.log(properties);
+// for (const day of Object.keys(openingHours)) console.log(day);
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-const values = Object.values(openingHours);
-console.log(values);
+// const values = Object.values(openingHours);
+// console.log(values);
 
-const entries = Object.entries(openingHours);
-console.log(entries);
+// const entries = Object.entries(openingHours);
+// console.log(entries);
 
-for (const [key, { open, close }] of entries)
-  console.log(`On ${key} we open at ${open} and close at ${close}`);
+// for (const [key, { open, close }] of entries)
+//   console.log(`On ${key} we open at ${open} and close at ${close}`);
 
 // Optional Chaining (?.)
 // console.log(restaurant.openingHours.mon);
@@ -81,47 +137,6 @@ for (const [key, { open, close }] of entries)
 // }
 // console.log(menu.entries());
 // console.log(...menu.entries());
-
-// const game = {
-//   team1: 'Bayern Munich',
-//   team2: 'Borrussia Dortmund',
-//   players: [
-//     [
-//       'Neuer',
-//       'Pavard',
-//       'Martinez',
-//       'Alaba',
-//       'Davies',
-//       'Kimmich',
-//       'Goretzka',
-//       'Coman',
-//       'Muller',
-//       'Gnarby',
-//       'Lewandowski',
-//     ],
-//     [
-//       'Burki',
-//       'Schulz',
-//       'Hummels',
-//       'Akanji',
-//       'Hakimi',
-//       'Weigl',
-//       'Witsel',
-//       'Hazard',
-//       'Brandt',
-//       'Sancho',
-//       'Gotze',
-//     ],
-//   ],
-//   score: '4:0',
-//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-//   date: 'Nov 9th, 2037',
-//   odds: {
-//     team1: 1.33,
-//     x: 3.25,
-//     team2: 6.5,
-//   },
-// };
 
 // let [players1, players2] = game.players;
 // let [gk, ...fieldPlayers] = players1;
