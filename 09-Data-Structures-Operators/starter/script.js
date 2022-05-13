@@ -51,6 +51,13 @@ const restaurant = {
   },
 };
 
+// Optional Chaining (?.)
+console.log(restaurant.openingHours.mon);
+// console.log(restaurant.openingHours.mon.open);
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.order?.(0, 1));
+console.log(restaurant.orderRissotto?.(0, 1) ?? 'Does not exist');
+
 // Lopping Arrays for-of
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 // for (const item of menu) console.log(item);
