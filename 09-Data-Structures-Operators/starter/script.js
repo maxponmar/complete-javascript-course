@@ -51,12 +51,26 @@ const restaurant = {
   },
 };
 
+// Looping objects
+for (const day of Object.keys(openingHours)) console.log(day);
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries)
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+
 // Optional Chaining (?.)
-console.log(restaurant.openingHours.mon);
-// console.log(restaurant.openingHours.mon.open);
-console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.order?.(0, 1));
-console.log(restaurant.orderRissotto?.(0, 1) ?? 'Does not exist');
+// console.log(restaurant.openingHours.mon);
+// // console.log(restaurant.openingHours.mon.open);
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.order?.(0, 1));
+// console.log(restaurant.orderRissotto?.(0, 1) ?? 'Does not exist');
 
 // Lopping Arrays for-of
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
