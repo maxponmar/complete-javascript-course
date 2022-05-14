@@ -51,39 +51,74 @@ const restaurant = {
   },
 };
 
+// Map Iteration
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct :D'],
+  [false, 'Try again :c'],
+]);
+
+console.log(question);
+console.log(Object.entries(openingHours));
+
+// Convert object to map
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// maps are also iterables
+// Quiz app
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key} : ${value}`);
+  }
+}
+// const answer = Number(promt('Your answer'));
+const answer = 3;
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// map => array
+console.log([...question]);
+
 // Maps
-const rest = new Map();
-rest.set('name', 'Classico Italiano');
-rest.set(1, 'Firenze, Italy');
-// Calling the set method returns the updated map
-console.log(rest.set(2, 'Firenze, Italy'));
+// const rest = new Map();
+// rest.set('name', 'Classico Italiano');
+// rest.set(1, 'Firenze, Italy');
+// // Calling the set method returns the updated map
+// console.log(rest.set(2, 'Firenze, Italy'));
 
-rest
-  .set('categories', ['Italian', 'Pizzeria', 'Organic'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'We are open :D')
-  .set(false, 'We are closed :c');
+// rest
+//   .set('categories', ['Italian', 'Pizzeria', 'Organic'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'We are open :D')
+//   .set(false, 'We are closed :c');
 
-console.log(rest.get('name'));
-console.log(rest.get(1));
+// console.log(rest.get('name'));
+// console.log(rest.get(1));
 
-const time = 14;
-console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+// const time = 14;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
 
-console.log(rest.has('categories'));
-rest.delete(2);
-console.log(rest);
-console.log(rest.size);
+// console.log(rest.has('categories'));
+// rest.delete(2);
+// console.log(rest);
+// console.log(rest.size);
 
-// Doesnt work, these two arrays are not the same (not same address)
-rest.set([1, 2], 'Test');
-console.log(rest.get([1, 2]));
+// // Doesnt work, these two arrays are not the same (not same address)
+// rest.set([1, 2], 'Test');
+// console.log(rest.get([1, 2]));
 
-// This does work...
-const arr = [1, 2];
-rest.set(arr, 'Test');
-console.log(rest.get(arr));
+// // This does work...
+// const arr = [1, 2];
+// rest.set(arr, 'Test');
+// console.log(rest.get(arr));
 
 // Sets
 // unique values
