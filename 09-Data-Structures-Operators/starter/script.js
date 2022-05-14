@@ -51,40 +51,74 @@ const restaurant = {
   },
 };
 
-// Map Iteration
-const question = new Map([
-  ['question', 'What is the best programming language in the world?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'JavaScript'],
-  ['correct', 3],
-  [true, 'Correct :D'],
-  [false, 'Try again :c'],
+// Coding Challenge 3
+const gameEvents = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow card'],
+  [69, 'Red card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow card'],
 ]);
 
-console.log(question);
-console.log(Object.entries(openingHours));
+const events = [...new Set(gameEvents.values())];
+console.log(events);
 
-// Convert object to map
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+gameEvents.delete(64);
 
-// maps are also iterables
-// Quiz app
-console.log(question.get('question'));
-for (const [key, value] of question) {
-  if (typeof key === 'number') {
-    console.log(`Answer ${key} : ${value}`);
-  }
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
+const time = [...gameEvents.keys()].pop();
+console.log(time);
+console.log(
+  `An event happened, on average, every ${time / gameEvents.size} minutes`
+);
+
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`[${half} HALF] ${min}: ${event}`);
 }
-// const answer = Number(promt('Your answer'));
-const answer = 3;
-console.log(answer);
 
-console.log(question.get(question.get('correct') === answer));
+// Map Iteration
+// const question = new Map([
+//   ['question', 'What is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'JavaScript'],
+//   ['correct', 3],
+//   [true, 'Correct :D'],
+//   [false, 'Try again :c'],
+// ]);
 
-// map => array
-console.log([...question]);
+// console.log(question);
+// console.log(Object.entries(openingHours));
+
+// // Convert object to map
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+// // maps are also iterables
+// // Quiz app
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') {
+//     console.log(`Answer ${key} : ${value}`);
+//   }
+// }
+// // const answer = Number(promt('Your answer'));
+// const answer = 3;
+// console.log(answer);
+
+// console.log(question.get(question.get('correct') === answer));
+
+// // map => array
+// console.log([...question]);
 
 // Maps
 // const rest = new Map();
