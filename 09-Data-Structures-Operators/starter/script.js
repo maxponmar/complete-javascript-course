@@ -51,22 +51,56 @@ const restaurant = {
   },
 };
 
+// Maps
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+// Calling the set method returns the updated map
+console.log(rest.set(2, 'Firenze, Italy'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :c');
+
+console.log(rest.get('name'));
+console.log(rest.get(1));
+
+const time = 14;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+
+// Doesnt work, these two arrays are not the same (not same address)
+rest.set([1, 2], 'Test');
+console.log(rest.get([1, 2]));
+
+// This does work...
+const arr = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest.get(arr));
+
 // Sets
 // unique values
-const orderSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
-]);
-console.log(orderSet);
-console.log(orderSet.size);
-console.log(orderSet.has('Pizza'));
-console.log(orderSet.has('Bread'));
-// Different letter in a string
-console.log(new Set('maximiliano').size);
+// const orderSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
+// console.log(orderSet);
+// console.log(orderSet.size);
+// console.log(orderSet.has('Pizza'));
+// console.log(orderSet.has('Bread'));
+// // Different letter in a string
+// console.log(new Set('maximiliano').size);
 // Coding Challenge 2
 
 // const game = {
