@@ -51,44 +51,82 @@ const restaurant = {
   },
 };
 
+// Strings pt 3
+console.log('a+very+nice+string'.split('+'));
+const [firstName, lastName] = 'Maximiliano Ponce'.split(' ');
+console.log(firstName, lastName);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const word of names) {
+    namesUpper.push(word[0].toUpperCase() + word.slice(1).toLowerCase());
+    // namesUpper.push(word.replace(word[0], word[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('maximILIano ponce marquez');
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Max'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = new String(number);
+  // const str = number + '';
+  const last = str.slice(-4);
+  console.log(last.padStart(str.length, '*'));
+};
+
+maskCreditCard(78912678162);
+maskCreditCard('12903819023890');
+
+const message2 = 'Bad weather... All Departues Delayed... ';
+console.log(message2.repeat(5));
+
 // Strings pt 2
-const airline = 'TAP Air Portugal';
-console.log(airline.toLowerCase());
-console.log(airline.toUpperCase());
+// const airline = 'TAP Air Portugal';
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
 
-const passenger = 'jOnAS';
-const passengerLower = passenger.toLowerCase();
-const passengerCorrect =
-  passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
+// const passenger = 'jOnAS';
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
 
-const email = 'hello@jonas.io';
-const loginEmail = '  Hello@Jonas.Io \n';
+// const email = 'hello@jonas.io';
+// const loginEmail = '  Hello@Jonas.Io \n';
 
-const lowerEmail = loginEmail.toLowerCase();
-const trimmedEmail = lowerEmail.trim();
-console.log(trimmedEmail);
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
 
-const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
-console.log(normalizedEmail);
-console.log(email === normalizedEmail);
+// const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
 
-const priceGB = '288,97';
-const priceUS = priceGB.replace(',', '.');
-console.log(priceUS);
+// const priceGB = '288,97';
+// const priceUS = priceGB.replace(',', '.');
+// console.log(priceUS);
 
-const announcement =
-  'All passengers come to barding door 23. Boarding door 23!';
-console.log(announcement.replace('door', 'gate'));
-console.log(announcement.replaceAll('door', 'gate'));
+// const announcement =
+//   'All passengers come to barding door 23. Boarding door 23!';
+// console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
 
-console.log(announcement.replace(/door/g, 'gate'));
+// console.log(announcement.replace(/door/g, 'gate'));
 
-const plane = 'A320Neo';
-console.log(plane.includes('A'));
-console.log(plane.includes('B'));
-console.log(plane.startsWith('Z'));
-console.log(plane.endsWith('o'));
+// const plane = 'A320Neo';
+// console.log(plane.includes('A'));
+// console.log(plane.includes('B'));
+// console.log(plane.startsWith('Z'));
+// console.log(plane.endsWith('o'));
 
 // Strings pt 1
 // const airline = 'TAP Air Portugal';
