@@ -51,61 +51,77 @@ const restaurant = {
   },
 };
 
+// Sets
+// unique values
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+// Different letter in a string
+console.log(new Set('maximiliano').size);
 // Coding Challenge 2
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-for (const [i, player] of game.scored.entries())
-  console.log(`Goal ${i + 1}: ${player}`);
+// for (const [i, player] of game.scored.entries())
+//   console.log(`Goal ${i + 1}: ${player}`);
 
-let average = 0;
-for (const odd of Object.values(game.odds)) average += odd;
-average /= Object.values(game.odds).length;
-console.log(average);
+// let average = 0;
+// for (const odd of Object.values(game.odds)) average += odd;
+// average /= Object.values(game.odds).length;
+// console.log(average);
 
-for (const [team, odd] of Object.entries(game.odds)) {
-  const teamString = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${teamString} ${odd}`);
-}
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamString = team === 'x' ? 'draw' : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamString} ${odd}`);
+// }
 
 // Looping objects
 // for (const day of Object.keys(openingHours)) console.log(day);
