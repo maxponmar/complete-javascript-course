@@ -51,43 +51,62 @@ const restaurant = {
   },
 };
 
-// Strings pt 3
-console.log('a+very+nice+string'.split('+'));
-const [firstName, lastName] = 'Maximiliano Ponce'.split(' ');
-console.log(firstName, lastName);
+// Coding Challenge 4
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-console.log(newName);
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
 
-const capitalizeName = function (name) {
-  const names = name.split(' ');
-  const namesUpper = [];
-  for (const word of names) {
-    namesUpper.push(word[0].toUpperCase() + word.slice(1).toLowerCase());
-    // namesUpper.push(word.replace(word[0], word[0].toUpperCase()));
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
   }
-  console.log(namesUpper.join(' '));
-};
+});
 
-capitalizeName('jessica ann smith davis');
-capitalizeName('maximILIano ponce marquez');
+// Strings pt 3
+// console.log('a+very+nice+string'.split('+'));
+// const [firstName, lastName] = 'Maximiliano Ponce'.split(' ');
+// console.log(firstName, lastName);
 
-const message = 'Go to gate 23!';
-console.log(message.padStart(20, '+').padEnd(30, '+'));
-console.log('Max'.padStart(20, '+').padEnd(30, '+'));
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
 
-const maskCreditCard = function (number) {
-  const str = new String(number);
-  // const str = number + '';
-  const last = str.slice(-4);
-  console.log(last.padStart(str.length, '*'));
-};
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+//   for (const word of names) {
+//     namesUpper.push(word[0].toUpperCase() + word.slice(1).toLowerCase());
+//     // namesUpper.push(word.replace(word[0], word[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
 
-maskCreditCard(78912678162);
-maskCreditCard('12903819023890');
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('maximILIano ponce marquez');
 
-const message2 = 'Bad weather... All Departues Delayed... ';
-console.log(message2.repeat(5));
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(20, '+').padEnd(30, '+'));
+// console.log('Max'.padStart(20, '+').padEnd(30, '+'));
+
+// const maskCreditCard = function (number) {
+//   const str = new String(number);
+//   // const str = number + '';
+//   const last = str.slice(-4);
+//   console.log(last.padStart(str.length, '*'));
+// };
+
+// maskCreditCard(78912678162);
+// maskCreditCard('12903819023890');
+
+// const message2 = 'Bad weather... All Departues Delayed... ';
+// console.log(message2.repeat(5));
 
 // Strings pt 2
 // const airline = 'TAP Air Portugal';
