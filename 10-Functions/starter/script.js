@@ -1,22 +1,35 @@
 'use strict';
 
+// Functions Returning Functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(greeting, name);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Max');
+greeterHey('Steven');
+
+greet('Hello')('Jonas');
+
 // Call back functions
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
-};
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
-};
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(' ');
+//   return [first.toUpperCase(), ...others].join(' ');
+// };
 
-const transformer = function (str, fn) {
-  console.log('Transformed string: ' + fn(str));
-  console.log('Transformed by ' + fn.name);
-};
+// const transformer = function (str, fn) {
+//   console.log('Transformed string: ' + fn(str));
+//   console.log('Transformed by ' + fn.name);
+// };
 
-transformer('JavaScript is the best!', upperFirstWord);
-transformer('JavaScript is the best!', oneWord);
+// transformer('JavaScript is the best!', upperFirstWord);
+// transformer('JavaScript is the best!', oneWord);
 
 //Value vs. Reference
 
