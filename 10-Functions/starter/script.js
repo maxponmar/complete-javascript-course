@@ -1,17 +1,58 @@
 'use strict';
 
-// Functions Returning Functions
-const greet = function (greeting) {
-  return function (name) {
-    console.log(greeting, name);
-  };
+// The call and apply methods
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      name,
+      'booked a seat on',
+      this.airline,
+      'flight',
+      this.iataCode,
+      flightNum
+    );
+    this.bookings.push({ flight: this.iataCode + flightNum, name });
+  },
 };
 
-const greeterHey = greet('Hey');
-greeterHey('Max');
-greeterHey('Steven');
+lufthansa.book(239, 'Max');
+lufthansa.book(635, 'Jonas');
+console.log(lufthansa);
 
-greet('Hello')('Jonas');
+const eurowings = {
+  name: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+const book = lufthansa.book;
+// book(23, 'Sarah')
+
+book.call(eurowings, 23, 'Sara');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const flightData = [583, 'George'];
+// Both do the same thing.
+book.apply(eurowings, flightData);
+book.call(eurowings, ...flightData);
+
+// Functions Returning Functions
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(greeting, name);
+//   };
+// };
+
+// const greeterHey = greet('Hey');
+// greeterHey('Max');
+// greeterHey('Steven');
+
+// greet('Hello')('Jonas');
 
 // Call back functions
 // const oneWord = function (str) {
