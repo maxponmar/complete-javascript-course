@@ -1,24 +1,43 @@
 'use strict';
 
+// Call back functions
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+const transformer = function (str, fn) {
+  console.log('Transformed string: ' + fn(str));
+  console.log('Transformed by ' + fn.name);
+};
+
+transformer('JavaScript is the best!', upperFirstWord);
+transformer('JavaScript is the best!', oneWord);
+
 //Value vs. Reference
-const flight = 'LH1234';
-const jonas = {
-  name: 'Jomas Schmedtmann',
-  passport: 123123123423,
-};
 
-const checkIn = function (flightNum, passenger) {
-  (flightNum = 'LH1999'), (passenger.name = 'Mr.' + passenger.name);
-  if (passenger.passport === 123123123423) {
-    console.log('Cheked In');
-  } else {
-    console.log('Wrong passport');
-  }
-};
+// const flight = 'LH1234';
+// const jonas = {
+//   name: 'Jomas Schmedtmann',
+//   passport: 123123123423,
+// };
 
-checkIn(flight, jonas);
-console.log(flight);
-console.log(jonas);
+// const checkIn = function (flightNum, passenger) {
+//   (flightNum = 'LH1999'), (passenger.name = 'Mr.' + passenger.name);
+//   if (passenger.passport === 123123123423) {
+//     console.log('Cheked In');
+//   } else {
+//     console.log('Wrong passport');
+//   }
+// };
+
+// checkIn(flight, jonas);
+// console.log(flight);
+// console.log(jonas);
 
 // JavaScript doest not have pass by reference
 // although when we pass object there are passed by reference
