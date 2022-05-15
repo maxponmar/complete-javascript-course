@@ -1,69 +1,107 @@
 'use strict';
 
-// The call and apply methods
-const lufthansa = {
-  airline: 'Lufthansa',
-  iataCode: 'LH',
-  bookings: [],
-  book(flightNum, name) {
-    console.log(
-      name,
-      'booked a seat on',
-      this.airline,
-      'flight',
-      this.iataCode,
-      flightNum
+// Coding Challenge 1
+const poll = {
+  question: 'What is your favourite programming language?',
+  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+  answers: new Array(4).fill(0),
+  registerNewAnswer() {
+    const answer = Number(
+      prompt(
+        `${this.question}\n${this.options.join('\n')}\n(Write option number)`
+      )
     );
-    this.bookings.push({ flight: this.iataCode + flightNum, name });
+    console.log(answer);
+
+    typeof answer === 'number' &&
+      answer < this.answers.length &&
+      this.answers[answer]++;
+
+    this.displayResults();
+    this.displayResults('string');
+  },
+
+  displayResults(type = 'array') {
+    if (type === 'array') {
+      console.log(this.answers);
+    } else if (type === 'string') {
+      console.log(`Poll results are ${this.answers.join(', ')}`);
+    }
   },
 };
 
-lufthansa.book(239, 'Max');
-lufthansa.book(635, 'Jonas');
-console.log(lufthansa);
+document
+  .querySelector('.poll')
+  .addEventListener('click', poll.registerNewAnswer.bind(poll));
 
-const eurowings = {
-  name: 'Eurowings',
-  iataCode: 'EW',
-  bookings: [],
-};
-const book = lufthansa.book;
-// book(23, 'Sarah')
+poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 
-book.call(eurowings, 23, 'Sara');
-console.log(eurowings);
+// The call and apply methods
+// const lufthansa = {
+//   airline: 'Lufthansa',
+//   iataCode: 'LH',
+//   bookings: [],
+//   book(flightNum, name) {
+//     console.log(
+//       name,
+//       'booked a seat on',
+//       this.airline,
+//       'flight',
+//       this.iataCode,
+//       flightNum
+//     );
+//     this.bookings.push({ flight: this.iataCode + flightNum, name });
+//   },
+// };
 
-book.call(lufthansa, 239, 'Mary Cooper');
-console.log(lufthansa);
+// lufthansa.book(239, 'Max');
+// lufthansa.book(635, 'Jonas');
+// console.log(lufthansa);
 
-const flightData = [583, 'George'];
-// Both do the same thing.
-book.apply(eurowings, flightData);
-book.call(eurowings, ...flightData);
-
-// Bind Method
+// const eurowings = {
+//   name: 'Eurowings',
+//   iataCode: 'EW',
+//   bookings: [],
+// };
+// const book = lufthansa.book;
+// // book(23, 'Sarah')
 
 // book.call(eurowings, 23, 'Sara');
-const bookEW = book.bind(eurowings);
-bookEW(23, 'Steven Williams');
-console.log(eurowings);
+// console.log(eurowings);
 
-const bookEW23 = book.bind(eurowings, 23);
-bookEW23('Martha');
-bookEW23('Pedro');
-console.log(eurowings);
+// book.call(lufthansa, 239, 'Mary Cooper');
+// console.log(lufthansa);
 
-// With event listeners
-lufthansa.planes = 300;
-lufthansa.buyPlane = function () {
-  console.log(this);
-  this.planes++;
-  console.log(this.planes);
-};
-// document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane);
-document
-  .querySelector('.buy')
-  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+// const flightData = [583, 'George'];
+// // Both do the same thing.
+// book.apply(eurowings, flightData);
+// book.call(eurowings, ...flightData);
+
+// // Bind Method
+
+// // book.call(eurowings, 23, 'Sara');
+// const bookEW = book.bind(eurowings);
+// bookEW(23, 'Steven Williams');
+// console.log(eurowings);
+
+// const bookEW23 = book.bind(eurowings, 23);
+// bookEW23('Martha');
+// bookEW23('Pedro');
+// console.log(eurowings);
+
+// // With event listeners
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function () {
+//   console.log(this);
+//   this.planes++;
+//   console.log(this.planes);
+// };
+// // document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane);
+// document
+//   .querySelector('.buy')
+//   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
 // Functions Returning Functions
 // const greet = function (greeting) {
