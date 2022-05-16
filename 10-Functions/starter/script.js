@@ -1,19 +1,37 @@
 'use strict';
 
-// Immediately Invoked Function Expressions IIFE
-const runOnce = function () {
-  console.log('This will never run again');
+// Closures
+
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
 };
 
-runOnce();
-runOnce();
+const booker = secureBooking();
 
-// IIFE
-(function () {
-  console.log('This will never run again');
-})();
+booker();
+booker();
+booker();
 
-(() => console.log('This will never run again'))();
+console.dir(booker);
+
+// Immediately Invoked Function Expressions IIFE
+// const runOnce = function () {
+//   console.log('This will never run again');
+// };
+
+// runOnce();
+// runOnce();
+
+// // IIFE
+// (function () {
+//   console.log('This will never run again');
+// })();
+
+// (() => console.log('This will never run again'))();
 
 // Coding Challenge 1
 // const poll = {
