@@ -1,26 +1,36 @@
 'use strict';
 
-let f;
-const g = function () {
-  const a = 23;
-  f = function () {
-    console.log(a * 2);
-  };
-};
+// Coding Challenge 2
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
 
-const h = function () {
-  const b = 777;
-  f = function () {
-    console.log(b * 2);
-  };
-};
+  document.querySelector('body').addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
 
-g();
-f();
+// let f;
+// const g = function () {
+//   const a = 23;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
 
-h();
-f();
-console.dir(f);
+// const h = function () {
+//   const b = 777;
+//   f = function () {
+//     console.log(b * 2);
+//   };
+// };
+
+// g();
+// f();
+
+// h();
+// f();
+// console.dir(f);
 
 // Closures
 
