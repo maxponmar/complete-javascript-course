@@ -1,22 +1,44 @@
 'use strict';
 
-// Closures
-
-const secureBooking = function () {
-  let passengerCount = 0;
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
   };
 };
 
-const booker = secureBooking();
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
 
-booker();
-booker();
-booker();
+g();
+f();
 
-console.dir(booker);
+h();
+f();
+console.dir(f);
+
+// Closures
+
+// const secureBooking = function () {
+//   let passengerCount = 0;
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
+
+// const booker = secureBooking();
+
+// booker();
+// booker();
+// booker();
+
+// console.dir(booker);
 
 // Immediately Invoked Function Expressions IIFE
 // const runOnce = function () {
