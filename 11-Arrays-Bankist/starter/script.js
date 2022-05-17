@@ -89,24 +89,32 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-// Coding Challenge 1
-const checkDogs = (dogsJulia, dogsKate) => {
-  const dogsJuliaCorrected = dogsJulia.slice();
-  dogsJuliaCorrected.splice(0, 1);
-  dogsJuliaCorrected.splice(-2);
-  console.log(dogsJuliaCorrected);
-  const allDogs = dogsJuliaCorrected.concat(dogsKate);
-  console.log(allDogs);
-  allDogs.forEach((dogAge, index) => {
-    console.log(
-      `Dog number ${index + 1} is ${dogAge} years old and its ${
-        dogAge < 3 ? 'a puppy' : 'an adult.'
-      }`
-    );
-  });
-};
 
-checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+// Data Transformations
+
+// Map method
+const eurToUsd = 1.1;
+const movementsUSD = movements.map(movement => movement * eurToUsd);
+console.log(movementsUSD);
+
+// Coding Challenge 1
+// const checkDogs = (dogsJulia, dogsKate) => {
+//   const dogsJuliaCorrected = dogsJulia.slice();
+//   dogsJuliaCorrected.splice(0, 1);
+//   dogsJuliaCorrected.splice(-2);
+//   console.log(dogsJuliaCorrected);
+//   const allDogs = dogsJuliaCorrected.concat(dogsKate);
+//   console.log(allDogs);
+//   allDogs.forEach((dogAge, index) => {
+//     console.log(
+//       `Dog number ${index + 1} is ${dogAge} years old and its ${
+//         dogAge < 3 ? 'a puppy' : 'an adult.'
+//       }`
+//     );
+//   });
+// };
+
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 // checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
 // Array Methods
