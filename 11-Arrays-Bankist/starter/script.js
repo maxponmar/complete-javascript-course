@@ -105,19 +105,33 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(arr.slice(-1)[0]);
 // console.log(arr.at(-1));
 
-for (const movement of movements) {
-  if (movement > 0) {
-    console.log(`You deposited ${movement}`);
-  } else {
-    console.log(`You withdrew ${Math.abs(movement)}`);
-  }
-}
+// for (const movement of movements) {
+//   if (movement > 0) {
+//     console.log(`You deposited ${movement}`);
+//   } else {
+//     console.log(`You withdrew ${Math.abs(movement)}`);
+//   }
+// }
 
-// There is no break nor continue statements in forEach
-movements.forEach((movement, index) => {
-  if (movement > 0) {
-    console.log(`You deposited ${movement}`);
-  } else {
-    console.log(`You withdrew ${Math.abs(movement)}`);
-  }
+// // There is no break nor continue statements in forEach
+// movements.forEach((movement, index) => {
+//   if (movement > 0) {
+//     console.log(`You deposited ${movement}`);
+//   } else {
+//     console.log(`You withdrew ${Math.abs(movement)}`);
+//   }
+// });
+
+currencies.forEach((value, key, map) => {
+  console.log(value);
+  console.log(key);
+  // console.log(map)
+});
+
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+currenciesUnique.forEach((value, key, set) => {
+  console.log(value);
+  // There is no key in sets
+  // key returns the value (only in sets)
+  console.log(key);
 });
