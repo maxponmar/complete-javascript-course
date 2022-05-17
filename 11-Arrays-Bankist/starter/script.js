@@ -109,6 +109,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // const movementsUSD = movements.map(movement => movement * eurToUsd);
 // console.log(movementsUSD);
 
+// Filter method
+const deposits = movements.filter(movement => movement > 0);
+console.log(deposits);
+const withdrawals = movements.filter(movement => movement < 0);
+console.log(withdrawals);
+
 // Coding Challenge 1
 // const checkDogs = (dogsJulia, dogsKate) => {
 //   const dogsJuliaCorrected = dogsJulia.slice();
