@@ -87,7 +87,13 @@ const createUsernames = accounts =>
   );
 
 createUsernames(accounts);
-console.log(accounts);
+
+const calcDisplayBalance = movements => {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements);
 
 /////////////////////////////////////////////////
 // LECTURES
@@ -110,10 +116,21 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(movementsUSD);
 
 // Filter method
-const deposits = movements.filter(movement => movement > 0);
-console.log(deposits);
-const withdrawals = movements.filter(movement => movement < 0);
-console.log(withdrawals);
+// const deposits = movements.filter(movement => movement > 0);
+// console.log(deposits);
+// const withdrawals = movements.filter(movement => movement < 0);
+// console.log(withdrawals);
+
+// Reduce method
+const accumulatorStart = 1000; // Optional parameter
+const balance = movements.reduce((accumulator, current, index, array) => {
+  console.log(accumulator);
+  // console.log(current);
+  // console.log(index);
+  // console.log(array);
+  return accumulator + current;
+}, accumulatorStart);
+console.log(balance);
 
 // Coding Challenge 1
 // const checkDogs = (dogsJulia, dogsKate) => {
