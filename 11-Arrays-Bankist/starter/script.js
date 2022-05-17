@@ -76,7 +76,19 @@ const displayMovements = movements => {
 };
 displayMovements(account1.movements);
 
-/////////////////////////////////////////////////
+const createUsernames = accounts =>
+  accounts.forEach(
+    account =>
+      (account.username = account.owner
+        .toLocaleLowerCase()
+        .split(' ')
+        .map(word => word[0])
+        .join(''))
+  );
+
+createUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 // LECTURES
 
@@ -93,9 +105,9 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // Data Transformations
 
 // Map method
-const eurToUsd = 1.1;
-const movementsUSD = movements.map(movement => movement * eurToUsd);
-console.log(movementsUSD);
+// const eurToUsd = 1.1;
+// const movementsUSD = movements.map(movement => movement * eurToUsd);
+// console.log(movementsUSD);
 
 // Coding Challenge 1
 // const checkDogs = (dogsJulia, dogsKate) => {
