@@ -108,6 +108,22 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
+// Coding Challenge 2
+const calcAverageHumanAge = function (ages) {
+  const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+  const adults = humanAges.filter(age => age >= 18);
+  console.log(humanAges);
+  console.log(adults);
+  const average = adults.reduce(
+    (acc, age, i, arr) => acc + age / arr.length,
+    0
+  );
+  return average;
+};
+const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+console.log(avg1, avg2);
+
 // Data Transformations
 
 // Map method
@@ -122,15 +138,15 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(withdrawals);
 
 // Reduce method
-const accumulatorStart = 1000; // Optional parameter
-const balance = movements.reduce((accumulator, current, index, array) => {
-  console.log(accumulator);
-  // console.log(current);
-  // console.log(index);
-  // console.log(array);
-  return accumulator + current;
-}, accumulatorStart);
-console.log(balance);
+// const accumulatorStart = 1000; // Optional parameter
+// const balance = movements.reduce((accumulator, current, index, array) => {
+//   console.log(accumulator);
+//   // console.log(current);
+//   // console.log(index);
+//   // console.log(array);
+//   return accumulator + current;
+// }, accumulatorStart);
+// console.log(balance);
 
 // Coding Challenge 1
 // const checkDogs = (dogsJulia, dogsKate) => {
