@@ -190,20 +190,42 @@ btnClose.addEventListener('click', e => {
 
 /////////////////////////////////////////////////
 
+// flat and flatMap
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+const deeparr = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(deeparr.flat());
+console.log(deeparr.flat(2));
+
+const accountMovements = accounts.map(acc => acc.movements);
+const allMovements = accountMovements.flat();
+let overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+overalBalance = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
 // some and every
-console.log(movements.includes(-130));
-console.log(movements.some(mov => mov === -130));
+// console.log(movements.includes(-130));
+// console.log(movements.some(mov => mov === -130));
 
-const anyDeposits = movements.some(mov => mov > 0);
-console.log(anyDeposits);
+// const anyDeposits = movements.some(mov => mov > 0);
+// console.log(anyDeposits);
 
-console.log(movements.every(mov => mov > 0));
-console.log(account4.movements.every(mov => mov > 0));
+// console.log(movements.every(mov => mov > 0));
+// console.log(account4.movements.every(mov => mov > 0));
 
-// callbacks
-const deposit = mov => mov > 0;
-console.log(movements.some(deposit));
-console.log(movements.every(deposit));
+// // callbacks
+// const deposit = mov => mov > 0;
+// console.log(movements.some(deposit));
+// console.log(movements.every(deposit));
 // findIndex method
 
 // Find method
