@@ -74,7 +74,6 @@ const displayMovements = movements => {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-displayMovements(account1.movements);
 
 const createUsernames = accounts =>
   accounts.forEach(
@@ -93,10 +92,8 @@ const calcDisplayBalance = movements => {
   labelBalance.textContent = `${balance} EUR`;
 };
 
-calcDisplayBalance(account1.movements);
-
-const calcDisplaySummary = movements => {
-  const incomes = movements
+const calcDisplaySummary = account => {
+  const incomes = account.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes}$`;
@@ -106,12 +103,11 @@ const calcDisplaySummary = movements => {
   labelSumOut.textContent = `${Math.abs(out)}$`;
   const interest = movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * account.interestRate) / 100)
     .filter((int, i) => int >= 1)
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest}$`;
 };
-calcDisplaySummary(account1.movements);
 /////////////////////////////////////////////////
 // LECTURES
 
@@ -123,11 +119,31 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+let currentAccount;
+
+btnLogin.addEventListener('click', e => {
+  e.preventDefault();
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+    displayMovements(currentAccount.movements);
+    calcDisplayBalance(currentAccount.movements);
+    calcDisplaySummary(currentAccount);
+  }
+  containerApp.style.opacity = 100;
+});
+
 /////////////////////////////////////////////////
 
 // Find method
 // Returns the first element that matches the condition
-console.log(movements.find(mov => mov < 0));
+// console.log(movements.find(mov => mov < 0));
 
 // Coding Challenge 3
 // const calcAverageHumanAge = ages =>
