@@ -139,8 +139,8 @@ btnLogin.addEventListener('click', e => {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
     updateUI(currentAccount);
+    containerApp.style.opacity = 100;
   }
-  containerApp.style.opacity = 100;
 });
 
 btnTransfer.addEventListener('click', e => {
@@ -162,7 +162,25 @@ btnTransfer.addEventListener('click', e => {
   inputTransferAmount.value = inputTransferTo.value = '';
 });
 
+btnClose.addEventListener('click', e => {
+  e.preventDefault();
+  if (
+    currentAccount.username === inputCloseUsername.value &&
+    currentAccount.pin === Number(inputClosePin.value)
+  ) {
+    accounts.splice(
+      accounts.findIndex(acc => acc.username === currentAccount.username),
+      1
+    );
+    containerApp.style.opacity = 0;
+    currentAccount = {};
+  }
+  inputCloseUsername.value = inputClosePin.value = '';
+});
+
 /////////////////////////////////////////////////
+
+// findIndex method
 
 // Find method
 // Returns the first element that matches the condition
