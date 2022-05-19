@@ -197,13 +197,29 @@ btnSort.addEventListener('click', e => {
 });
 /////////////////////////////////////////////////
 
-// sorting arrays
-const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
-console.log(owners);
-console.log(owners.sort());
-console.log(owners);
+// Creating and filling arrays
+console.log([1, 2, 3]);
+console.log(new Array([1, 2, 3]));
+console.log(new Array(7));
+console.log(new Array(7).fill(1));
+console.log(new Array(7).fill(1, 3, 5));
 
-console.log(movements);
+console.log(Array.from({ length: 7 }, () => 1));
+console.log(Array.from({ length: 7 }, (curr, i) => i + 1));
+
+const movementsUI = Array.from(
+  document.querySelectorAll('.movements__value'),
+  el => el.textContent
+);
+console.log(movementsUI);
+
+// sorting arrays
+// const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+// console.log(owners);
+// console.log(owners.sort());
+// console.log(owners);
+
+// console.log(movements);
 // sort as string values
 // console.log(movements.sort());
 
