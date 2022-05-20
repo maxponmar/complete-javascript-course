@@ -252,9 +252,24 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 
+// Big int
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(1233245423252398079545n);
+console.log(BigInt(1233245423252398079545n));
+
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(20n == 20);
+
 // Numeric separators
-const diameter = 287_460_000_000;
-console.log(diameter);
+// const diameter = 287_460_000_000;
+// console.log(diameter);
 
 // Remainder operator
 // console.log(5 % 2);
