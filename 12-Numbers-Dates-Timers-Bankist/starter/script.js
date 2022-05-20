@@ -251,21 +251,24 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+// Remainder operator
+console.log(5 % 2);
+console.log(5 / 2);
 
 // Rounding Numbers
-console.log(Math.sqrt(23));
-console.log(23 ** 1 / 2);
-console.log(23 ** 1 / 3);
+// console.log(Math.sqrt(23));
+// console.log(23 ** 1 / 2);
+// console.log(23 ** 1 / 3);
 
-console.log(Math.trunc(23.3));
-console.log(Math.ceil(23.3));
-console.log(Math.floor(23.3));
-console.log(Math.round(23.3));
-console.log(Math.round(23.9));
+// console.log(Math.trunc(23.3));
+// console.log(Math.ceil(23.3));
+// console.log(Math.floor(23.3));
+// console.log(Math.round(23.3));
+// console.log(Math.round(23.9));
 
-console.log((2.7).toFixedA(0));
-console.log((2.7).toFixedA(3));
-console.log(+(2.7123).toFixedA(2));
+// console.log((2.7).toFixedA(0));
+// console.log((2.7).toFixedA(3));
+// console.log(+(2.7123).toFixedA(2));
 
 // Checking numbers
 
