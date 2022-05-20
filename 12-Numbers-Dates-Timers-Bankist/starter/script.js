@@ -251,9 +251,14 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
+// Numeric separators
+const diameter = 287_460_000_000;
+console.log(diameter);
+
 // Remainder operator
-console.log(5 % 2);
-console.log(5 / 2);
+// console.log(5 % 2);
+// console.log(5 / 2);
 
 // Rounding Numbers
 // console.log(Math.sqrt(23));
