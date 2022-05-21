@@ -58,3 +58,21 @@ document.querySelector('.btn--close-cookie').addEventListener('click', () => {
   message.remove();
   // message.parentElement.removeChild(message);
 });
+
+message.style.backgroundClip = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.color);
+console.log(getComputedStyle(message).color);
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+console.log(logo.className);
+
+console.log(logo.designer);
+console.log(logo.getAttribute('designer'));
+console.log(logo.setAttribute('company', 'Bankist'));
