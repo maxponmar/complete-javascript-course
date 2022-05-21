@@ -45,7 +45,7 @@ const message = document.createElement('div');
 message.classList.add('cookie-message');
 message.textContent = 'We use cookies';
 message.innerHTML =
-  'We use cookies <button class="btn btn--close-cokie">Got it</button>';
+  'We use cookies <button class="btn btn--close-cookie">Got it</button>';
 
 header.prepend(message);
 // header.append(message);
@@ -76,3 +76,21 @@ console.log(logo.className);
 console.log(logo.designer);
 console.log(logo.getAttribute('designer'));
 console.log(logo.setAttribute('company', 'Bankist'));
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', e => {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+  console.log(e.target.getBoundingClientRect());
+  console.log(window.pageXOffset, window.pageYOffset);
+  // window.scrollTo(s1coords.left, s1coords.top + window.scrollY);
+  // window.scrollTo({
+  //   left: s1coords.left + window.scrollX,
+  //   top: s1coords.top + window.scrollY,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
