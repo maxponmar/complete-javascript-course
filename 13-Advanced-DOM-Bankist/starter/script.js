@@ -297,6 +297,20 @@ dotContainer.addEventListener('click', e => {
   }
 });
 
+// Lifecycle dom events
+document.addEventListener('DOMContentLoaded', e =>
+  console.log('HTML parsed and DOM tree built')
+);
+// Not necessary as the script is loaded at the end of the HTML file
+
+window.addEventListener('load', e => console.log('Page fully loaded'));
+
+window.addEventListener('beforeunload', e => {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = '';
+});
+
 // DOM Traversing
 /*
 const h1 = document.querySelector('h1');
