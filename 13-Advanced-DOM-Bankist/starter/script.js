@@ -164,12 +164,37 @@ nav.addEventListener('mouseover', handleHover.bind(0.5));
 // });
 nav.addEventListener('mouseout', handleHover.bind(1));
 
-const initialCoords = section1.getBoundingClientRect();
-// Sticky navigation
-window.addEventListener('scroll', e => {
-  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+// const initialCoords = section1.getBoundingClientRect();
+// // Sticky navigation
+// window.addEventListener('scroll', e => {
+//   if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// });
+// const obsCallback = function (entries, observer) {
+//   entries.forEach(entry => {
+//     console.log(entry);
+//   });
+// };
+// const obsOptions = {
+//   root: null,
+//   threshold: [0, 2],
+// };
+// const observer = new IntersectionObserver(obsCallback, obsOptions);
+// observer.observe(section1);
+
+const navHeight = nav.getBoundingClientRect().height;
+const stickyNav = entries => {
+  const [entry] = entries;
+  if (!entry.isIntersecting) nav.classList.add('sticky');
   else nav.classList.remove('sticky');
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
 });
+headerObserver.observe(header);
 
 // DOM Traversing
 /*
