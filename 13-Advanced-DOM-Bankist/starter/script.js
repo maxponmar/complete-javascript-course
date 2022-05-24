@@ -137,6 +137,33 @@ tabsContainer.addEventListener('click', e => {
     .classList.add('operations__content--active');
 });
 
+// Passing arguments to event handlers
+// Menu fade animation
+
+const handleHover = function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+
+const nav = document.querySelector('.nav');
+
+// nav.addEventListener('mouseover', e => {
+//   handleHover(e, 0.5);
+// });
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+
+// nav.addEventListener('mouseout', e => {
+//   handleHover(e, 1);
+// });
+nav.addEventListener('mouseout', handleHover.bind(1));
+
 // DOM Traversing
 /*
 const h1 = document.querySelector('h1');
