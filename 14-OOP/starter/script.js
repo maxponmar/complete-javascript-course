@@ -92,7 +92,7 @@ mercedes.accelerate();
 mercedes.brake();
 
 */
-
+/*
 // ES6 Classes
 class PersonCl {
   constructor(fullName, birthYear) {
@@ -170,3 +170,28 @@ console.log(jessica.fullName);
 //   console.log('Hey there!');
 // };
 PersonCl.hey();
+
+*/
+
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = 'Steven';
+steven.birthYear = 2002;
+steven.calcAge();
+
+console.log(steven.__proto__ === PersonProto);
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1979);
+console.log(sarah);
