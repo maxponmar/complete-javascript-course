@@ -221,7 +221,6 @@ const getPosition = function () {
 const whereAmI = async function () {
   try {
     const geolocation = await getPosition();
-    console.log(geolocation);
     const { latitude, longitude } = geolocation.coords;
 
     const resGeo = await fetch(
@@ -229,8 +228,6 @@ const whereAmI = async function () {
     );
     if (!resGeo.ok) throw new Error('Problem getting location data');
     const dataGeo = await resGeo.json();
-
-    console.log(dataGeo);
 
     // The old way with .then
     // fetch(`https://restcountries.com/v2/name/${country}`).then(res =>
@@ -243,17 +240,19 @@ const whereAmI = async function () {
     );
     if (!res.ok) throw new Error('Problem getting country information');
     const data = await res.json();
-    console.log(data);
     renderCountry(data[0]);
     countriesContainer.style.opacity = 1;
+    return 'Returning from promise';
   } catch (err) {
-    console.log(err.message);
     renderError(`Something went wrong, ${err.message}`);
+    throw err;
   }
 };
 
 // whereAmI('portugal');
 // console.log('FIRST');
 btn.addEventListener('click', function () {
-  whereAmI();
+  whereAmI()
+    .then(res => console.log(res))
+    .catch(err => console.log('ERROR:' + err.message));
 });
