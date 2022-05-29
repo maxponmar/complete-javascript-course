@@ -171,13 +171,14 @@ const getCountryData = function (country) {
     });
 };
 
-btn.addEventListener('click', function () {
-  getCountryData('australia');
-});
+// btn.addEventListener('click', function () {
+//   getCountryData('australia');
+// });
 
 // getCountryData('mexico');
 
 // building promises
+/*
 const lotteryPromise = new Promise(function (resolve, reject) {
   console.log('Lottery draw is happening');
   setTimeout(() => {
@@ -207,3 +208,45 @@ wait(2)
 
 Promise.resolve('abc').then(x => console.log(x));
 Promise.reject('abc').catch(x => console.error(x));
+*/
+
+// Async/await
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const whereAmI = async function () {
+  const geolocation = await getPosition();
+  console.log(geolocation);
+  const { latitude, longitude } = geolocation.coords;
+
+  const resGeo = await fetch(
+    `https://geocode.xyz/${latitude},${longitude}?geoit=json`
+  );
+  const dataGeo = await resGeo.json();
+
+  console.log(dataGeo);
+
+  // The old way with .then
+  // fetch(`https://restcountries.com/v2/name/${country}`).then(res =>
+  //   console.log(res)
+  // );
+
+  // Modern way with async/await
+  const res = await fetch(
+    `https://restcountries.com/v2/name/${dataGeo.country}`
+  );
+  const data = await res.json();
+  console.log(data);
+  renderCountry(data[0]);
+  countriesContainer.style.opacity = 1;
+};
+
+// whereAmI('portugal');
+// console.log('FIRST');
+btn.addEventListener('click', function () {
+  whereAmI();
+});
