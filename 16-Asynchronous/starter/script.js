@@ -176,3 +176,34 @@ btn.addEventListener('click', function () {
 });
 
 // getCountryData('mexico');
+
+// building promises
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log('Lottery draw is happening');
+  setTimeout(() => {
+    if (Math.random() >= 0.5) {
+      resolve('You WIN');
+    } else {
+      reject('You LOSE');
+    }
+  }, 2000);
+});
+
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
+
+// promisifying setTimeout
+const wait = seconds => {
+  return new Promise(resolve => {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+wait(2)
+  .then(() => {
+    console.log('I waited for 2 seconds');
+    return wait(1);
+  })
+  .then(() => console.log('I waited for 1 second'));
+
+Promise.resolve('abc').then(x => console.log(x));
+Promise.reject('abc').catch(x => console.error(x));
